@@ -238,13 +238,13 @@ G2L["17"]["BackgroundTransparency"] = 0.30000001192092896;
 
 local button = G2L["17"]
 local function onButtonHeld()
-    wait(0.5)
+    wait(1)
     getgenv().connected = false
     if G2L["2"].Visible == false then
         G2L["2"].Visible = true
     end
     delfile("injectcode.txt")
-    wait(0.5)
+    wait(1)
 end
 
 local isButtonDown = false
