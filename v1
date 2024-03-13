@@ -254,42 +254,30 @@ local function onButtonReleased()
     holdStartTime = 0
 end
 
--- Define variables to track the button click count and timer
-local clickCount = 0
-local timerHandle = nil
 
--- Define the function to execute when button is triple-clicked
+local clickCount = 0
+local lastClickTime = 0
+
 local function onTripleClick()
-    print("Button triple-clicked!")  -- You can replace this with whatever action you want to perform
+    button.Visible = false
 end
 
--- Function to handle when the button is clicked
 local function onButtonClicked()
-    clickCount = clickCount + 1
+    local currentTime = tick()
+    if currentTime - lastClickTime < 0.5 then
+        clickCount = clickCount + 1
+    else
+        clickCount = 1
+    end
+    
+    lastClickTime = currentTime
     
     if clickCount == 3 then
         onTripleClick()
         clickCount = 0
-        if timerHandle then
-            timerHandle:Disconnect()
-            timerHandle = nil
-        end
     end
 end
-
--- Function to decrement click count every second
-local function decrementClickCount()
-    if clickCount > 0 then
-        clickCount = clickCount - 1
-        print("Click count decremented to", clickCount)
-    end
-end
-
--- Connect the button click event to the function
 button.MouseButton1Click:Connect(onButtonClicked)
-
--- Start the timer to decrement click count every second
-timerHandle = game:GetService("RunService").Heartbeat:Connect(decrementClickCount)
 button.MouseButton1Down:Connect(onButtonPressed)
 button.MouseButton1Up:Connect(onButtonReleased)
 game:GetService("RunService").Stepped:Connect(function()
