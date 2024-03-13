@@ -188,7 +188,7 @@ getgenv().DevConnect = function(devcode)
     output("Connected")
     getgenv().connected = true
     wait(0.5)
-    G2L["2"].Visible = false
+    G2L["2"]:Destroy()
     out.Text=""
     task.spawn(function() 
         while true do
@@ -212,7 +212,13 @@ end
 
 --auto:
 if isfile("injectcode.txt") then DevConnect(readfile("injectcode.txt")) else writefile("injectcode.txt", G2L["8"].Text) DevConnect(readfile("injectcode.txt")) end
- 
+
+if getgenv().connected = true then
+    G2L["2"]:Destroy()
+else
+    
+end
+
 G2L["e"].MouseButton1Click:Connect(function()
     if isfile("injectcode.txt") then DevConnect(readfile("injectcode.txt")) else writefile("injectcode.txt", G2L["8"].Text) DevConnect(readfile("injectcode.txt")) end
 end)
@@ -242,7 +248,9 @@ local holdThreshold = 1 -- Adjust this value as needed
 
 local function onButtonHeld()
     getgenv().connected = false
-    guiToToggle.Visible = not guiToToggle.Visible
+    if G2L["2"] then
+        guiToToggle.Visible = not guiToToggle.Visible
+    end
     delfile("injectcode.txt")
 end
 
