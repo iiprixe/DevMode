@@ -243,7 +243,7 @@ G2L["17"]["BackgroundTransparency"] = 0.30000001192092896;
 local button = G2L["17"]
 local function onButtonHeld()
     connected = false
-    G2L["2"].Visible = true
+    G2L["2"].Visible = not G2L["2"].Visible
 end
 local isButtonDown = false
 local holdStartTime = 0
