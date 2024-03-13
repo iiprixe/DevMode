@@ -314,7 +314,7 @@ end)
 -- StarterGui.DevMode.TriggerPoint.Background.ScalingIcon
 G2L["18"] = Instance.new("ImageLabel", G2L["17"]);
 G2L["18"]["ScaleType"] = Enum.ScaleType.Fit;
-G2L["18"]["ImageColor3"] = Color3.fromRGB(0, 255, 0);
+G2L["18"]["ImageColor3"] = Color3.fromRGB(255,0,0)
 G2L["18"]["AnchorPoint"] = Vector2.new(0.5, 0.5);
 G2L["18"]["Image"] = [[http://www.roblox.com/asset/?id=15861930865]];
 G2L["18"]["Size"] = UDim2.new(0, 30, 0, 30);
