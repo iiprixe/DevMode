@@ -241,20 +241,22 @@ local guiToToggle = G2L["2"]
 local holdThreshold = 1 -- Adjust this value as needed
 
 local function onButtonHeld()
-    wait(holdThreshold)
     getgenv().connected = false
     guiToToggle.Visible = not guiToToggle.Visible
     delfile("injectcode.txt")
 end
 
+-- Define variables to track the button state
 local isButtonDown = false
 local holdStartTime = 0
 
+-- Function to handle when the button is pressed
 local function onButtonPressed()
     isButtonDown = true
-    holdStartTime = tick()
+    holdStartTime = tick()  -- Get the current time
 end
 
+-- Function to handle when the button is released
 local function onButtonReleased()
     isButtonDown = false
     holdStartTime = 0
@@ -288,16 +290,14 @@ button.MouseButton1Down:Connect(onButtonPressed)
 button.MouseButton1Up:Connect(onButtonReleased)
 
 game:GetService("RunService").Stepped:Connect(function()
-    wait(1)
     if isButtonDown then
         local elapsedTime = tick() - holdStartTime
-        if elapsedTime >= holdThreshold then
+        if elapsedTime >= 1 then
             onButtonHeld()
             holdStartTime = 0
             isButtonDown = false
         end
     end
-    wait(0.5) -- Not necessary to include this wait here
 end)
 
 
