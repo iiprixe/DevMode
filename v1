@@ -237,18 +237,19 @@ G2L["17"]["Position"] = UDim2.new(0, 0, 0.5, 0);
 G2L["17"]["BackgroundTransparency"] = 0.30000001192092896;
 
 local button = G2L["17"]
+local guiToToggle = G2L["2"]
+local holdThreshold = 1 -- Adjust this value as needed
+
 local function onButtonHeld()
-    wait(1)
+    wait(holdThreshold)
     getgenv().connected = false
-    if G2L["2"].Visible == false then
-        G2L["2"].Visible = true
-    end
+    guiToToggle.Visible = not guiToToggle.Visible
     delfile("injectcode.txt")
-    wait(1)
 end
 
 local isButtonDown = false
 local holdStartTime = 0
+
 local function onButtonPressed()
     isButtonDown = true
     holdStartTime = tick()
@@ -289,13 +290,15 @@ button.MouseButton1Up:Connect(onButtonReleased)
 game:GetService("RunService").Stepped:Connect(function()
     if isButtonDown then
         local elapsedTime = tick() - holdStartTime
-        if elapsedTime >= 1 then
+        if elapsedTime >= holdThreshold then
             onButtonHeld()
             holdStartTime = 0
             isButtonDown = false
         end
     end
+    wait(0.5) -- Not necessary to include this wait here
 end)
+
 
 
 -- StarterGui.DevMode.TriggerPoint.Background.ScalingIcon
