@@ -217,9 +217,7 @@ getgenv().DevConnect = function(devcode)
 end
 
 
-G2L["d"].MouseButton1Click:Connect(function()
-    DevConnect(G2L["8"].Text)
-end)
+
 
 
 
