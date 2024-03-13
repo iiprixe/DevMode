@@ -212,6 +212,10 @@ getgenv().DevConnect = function(devcode)
     end) 
 end
 
+local auto = readfile("injectcode.txt")
+if auto then
+    DevConnect(auto)
+end
 
 G2L["e"].MouseButton1Click:Connect(function()
     writefile("injectcode.txt", G2L["8"].Text)
@@ -225,6 +229,7 @@ end)
 G2L["16"] = Instance.new("Frame", game.CoreGui:WaitForChild("TopBarApp").UnibarLeftFrame.StackedElements);
 G2L["16"]["BackgroundTransparency"] = 1;
 G2L["16"]["LayoutOrder"] = 1;
+G2L["16"].BackgroundColor3 = Color3.fromRGB(0,0,0)
 G2L["16"]["Size"] = UDim2.new(0, 44, 1, 0);
 G2L["16"]["Name"] = [[TriggerPoint]];
 
