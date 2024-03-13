@@ -253,6 +253,31 @@ local function onButtonReleased()
     isButtonDown = false
     holdStartTime = 0
 end
+local button = script.Parent
+
+local clickCount = 0
+local lastClickTime = 0
+
+local function onTripleClick()
+    button.Visible = false
+end
+
+local function onButtonClicked()
+    local currentTime = tick()
+    if currentTime - lastClickTime < 0.5 then
+        clickCount = clickCount + 1
+    else
+        clickCount = 1
+    end
+    
+    lastClickTime = currentTime
+    
+    if clickCount == 3 then
+        onTripleClick()
+        clickCount = 0
+    end
+end
+button.MouseButton1Click:Connect(onButtonClicked)
 button.MouseButton1Down:Connect(onButtonPressed)
 button.MouseButton1Up:Connect(onButtonReleased)
 game:GetService("RunService").Stepped:Connect(function()
@@ -260,10 +285,6 @@ game:GetService("RunService").Stepped:Connect(function()
         local elapsedTime = tick() - holdStartTime
         if elapsedTime >= 1 then
             onButtonHeld()
-            holdStartTime = 0
-            isButtonDown = false
-        else
-            button:Destroy()
             holdStartTime = 0
             isButtonDown = false
         end
