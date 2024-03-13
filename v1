@@ -237,14 +237,6 @@ G2L["17"]["Name"] = [[Background]];
 G2L["17"]["Position"] = UDim2.new(0, 0, 0.5, 0);
 G2L["17"]["BackgroundTransparency"] = 0.30000001192092896;
 
-wait(2)
-if getgenv().connected == true then
-    wait(2)
-    G2L["2"]:Destroy()
-    G2L["16"]:Destroy()
-else
-end
-
 local button = G2L["17"]
 local guiToToggle = G2L["2"]
 local holdThreshold = 1 -- Adjust this value as needed
