@@ -345,9 +345,10 @@ G2L["1b"]["CornerRadius"] = UDim.new(1, 0);
 wait(4)
 if getgenv().connected == true then
     wait(2)
+    i.ImageColor3 = Color3.fromRGB(0,255,0)
     G2L["2"]:Destroy()
     G2L["16"]:Destroy()
-else
+else i.ImageColor3 = Color3.fromRGB(255,0,0)
 end
 
 while true do
