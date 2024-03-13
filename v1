@@ -214,8 +214,8 @@ end
 if isfile("injectcode.txt") then DevConnect(readfile("injectcode.txt")) else writefile("injectcode.txt", G2L["8"].Text) DevConnect(readfile("injectcode.txt")) end
 
 if getgenv().connected == true then
+    wait(2)
     G2L["2"]:Destroy()
-    wait(1)
     G2L["16"]:Destroy()
 else
     
@@ -257,8 +257,8 @@ local function onButtonHeld()
 end
 
 G2L["e"].MouseButton1Click:Connect(function()
+    wait(2)
     G2L["2"]:Destroy()
-    wait(1)
     G2L["16"]:Destroy()
 end)
 
