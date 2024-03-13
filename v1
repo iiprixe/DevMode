@@ -238,10 +238,11 @@ G2L["17"]["BackgroundTransparency"] = 0.30000001192092896;
 
 local button = G2L["17"]
 local function onButtonHeld()
+    wait(0.5)
     getgenv().connected = false
     G2L["2"].Visible = not G2L["2"].Visible
     delfile("injectcode.txt")
-    wait(0.7)
+    wait(0.5)
 end
 local isButtonDown = false
 local holdStartTime = 0
@@ -287,9 +288,9 @@ game:GetService("RunService").Stepped:Connect(function()
             onButtonHeld()
             holdStartTime = 0
             isButtonDown = false
-            wait(0.7)
         end
     end
+    wait(0.5)
 end)
 
 -- StarterGui.DevMode.TriggerPoint.Background.ScalingIcon
