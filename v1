@@ -240,21 +240,24 @@ local button = G2L["17"]
 local function onButtonHeld()
     wait(0.5)
     getgenv().connected = false
-    G2L["2"].Visible = not G2L["2"].Visible
+    if G2L["2"].Visible == false then
+        G2L["2"].Visible = true
+    end
     delfile("injectcode.txt")
     wait(0.5)
 end
+
 local isButtonDown = false
 local holdStartTime = 0
 local function onButtonPressed()
     isButtonDown = true
     holdStartTime = tick()
 end
+
 local function onButtonReleased()
     isButtonDown = false
     holdStartTime = 0
 end
-
 
 local clickCount = 0
 local lastClickTime = 0
@@ -278,9 +281,11 @@ local function onButtonClicked()
         clickCount = 0
     end
 end
+
 button.MouseButton1Click:Connect(onButtonClicked)
 button.MouseButton1Down:Connect(onButtonPressed)
 button.MouseButton1Up:Connect(onButtonReleased)
+
 game:GetService("RunService").Stepped:Connect(function()
     if isButtonDown then
         local elapsedTime = tick() - holdStartTime
@@ -290,8 +295,8 @@ game:GetService("RunService").Stepped:Connect(function()
             isButtonDown = false
         end
     end
-    wait(0.5)
 end)
+
 
 -- StarterGui.DevMode.TriggerPoint.Background.ScalingIcon
 G2L["18"] = Instance.new("ImageLabel", G2L["17"]);
