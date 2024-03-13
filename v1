@@ -263,13 +263,14 @@ local function onTripleClick()
 end
 
 local function onButtonClicked()
+    button.MouseButton1Click:Connect(function()
+        clickCount += 1
+    end)
+
     local currentTime = tick()
     if currentTime - lastClickTime < 0.5 then
-        clickCount = clickCount + 1
-    else
-        clickCount = 1
+        clickCount =- 1
     end
-    
     lastClickTime = currentTime
     
     if clickCount == 3 then
