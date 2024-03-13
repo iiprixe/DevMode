@@ -72,7 +72,7 @@ G2L["8"]["PlaceholderText"] = "[Dev key]";
 G2L["8"]["Size"] = UDim2.new(1, 0, 1, 0);
 G2L["8"]["ClipsDescendants"] = true;
 G2L["8"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
-G2L["8"]["Text"] = [[]];
+G2L["8"]["Text"] = readfile("injectcode.txt");
 
 -- StarterGui.DevMode.Editor.Devkey.TextBox.UIPadding
 G2L["9"] = Instance.new("UIPadding", G2L["8"]);
@@ -188,7 +188,7 @@ getgenv().DevConnect = function(devcode)
         return
     end
     output("Connected")
-    connected = true
+    getgenv().connected = true
     wait(0.5)
     G2L["2"].Visible = false
     out.Text=""
@@ -214,7 +214,8 @@ end
 
 
 G2L["e"].MouseButton1Click:Connect(function()
-    DevConnect(G2L["8"].Text)
+    writefile("injectcode.txt", G2L["8"].Text)
+    DevConnect(readfile("injectcode.txt"))
 end)
 
 
@@ -238,8 +239,9 @@ G2L["17"]["BackgroundTransparency"] = 0.30000001192092896;
 
 local button = G2L["17"]
 local function onButtonHeld()
-    connected = false
+    getgenv().connected = false
     G2L["2"].Visible = not G2L["2"].Visible
+    delfile("injectcode.txt")
 end
 local isButtonDown = false
 local holdStartTime = 0
@@ -300,12 +302,12 @@ while true do
     wait()
     local i = G2L["18"]
     local b = G2L["16"]
-    if connect then
-        i.ImageColor3 = Color3.fromRGB(0,30,0)
-        b.BackgroundColor3 = Color3.fromRGB(0,30,0)
+    if getgenv().connected then
+        i.ImageColor3 = Color3.fromRGB(0,255,0)
+        b.BackgroundColor3 = Color3.fromRGB(0,0,0)
     else
-        i.ImageColor3 = Color3.fromRGB(30,0,0)
-        b.BackgroundColor3 = Color3.fromRGB(30,0,0)
+        i.ImageColor3 = Color3.fromRGB(255,0,0)
+        b.BackgroundColor3 = Color3.fromRGB(0,0,0)
     end
 end
 
