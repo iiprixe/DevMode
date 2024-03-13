@@ -213,9 +213,15 @@ getgenv().DevConnect = function(devcode)
 end
 
 local auto = readfile("injectcode.txt")
-if auto then
-    DevConnect(auto)
-    return
+local success, result = pcall(function()
+    if auto then
+    end
+end)
+
+if not success then
+    print("false")
+else
+    DevConnect(readfile("injectcode.txt"))
 end
 
 G2L["e"].MouseButton1Click:Connect(function()
