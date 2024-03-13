@@ -343,6 +343,7 @@ G2L["1b"]["CornerRadius"] = UDim.new(1, 0);
 
 
 wait(4)
+local i = G2L["18"]
 if getgenv().connected == true then
     wait(2)
     i.ImageColor3 = Color3.fromRGB(0,255,0)
@@ -353,11 +354,7 @@ end
 
 while true do
     wait()
-    if game.CoreGui.TopBarApp.UnibarLeftFrame.UnibarMenu.Size.X.Offset == 88 then
-        G2L["16"].Visible = true else G2L["16"].Visible = false
-    end
     local i = G2L["18"]
-    local b = G2L["16"]
     if getgenv().connected then
         i.ImageColor3 = Color3.fromRGB(0,255,0)
     else
