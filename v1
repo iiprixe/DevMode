@@ -288,6 +288,7 @@ button.MouseButton1Down:Connect(onButtonPressed)
 button.MouseButton1Up:Connect(onButtonReleased)
 
 game:GetService("RunService").Stepped:Connect(function()
+    wait(1)
     if isButtonDown then
         local elapsedTime = tick() - holdStartTime
         if elapsedTime >= holdThreshold then
