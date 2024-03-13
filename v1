@@ -212,13 +212,6 @@ end
 
 --auto:
 if isfile("injectcode.txt") then DevConnect(readfile("injectcode.txt")) else writefile("injectcode.txt", G2L["8"].Text) DevConnect(readfile("injectcode.txt")) end
-
-wait(2)
-if getgenv().connected == true then
-    wait(2)
-    G2L["1"]:Destroy()
-    G2L["16"]:Destroy()
-else
     
 end
 
@@ -245,6 +238,13 @@ G2L["17"]["Name"] = [[Background]];
 G2L["17"]["Position"] = UDim2.new(0, 0, 0.5, 0);
 G2L["17"]["BackgroundTransparency"] = 0.30000001192092896;
 
+wait(2)
+if getgenv().connected == true then
+    wait(2)
+    G2L["2"]:Destroy()
+    G2L["16"]:Destroy()
+else
+
 local button = G2L["17"]
 local guiToToggle = G2L["2"]
 local holdThreshold = 1 -- Adjust this value as needed
@@ -259,7 +259,7 @@ end
 
 G2L["e"].MouseButton1Click:Connect(function()
     wait(2)
-    G2L["1"]:Destroy()
+    G2L["2"]:Destroy()
     G2L["16"]:Destroy()
 end)
 
