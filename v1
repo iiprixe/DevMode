@@ -213,8 +213,10 @@ end
 --auto:
 if isfile("injectcode.txt") then DevConnect(readfile("injectcode.txt")) else writefile("injectcode.txt", G2L["8"].Text) DevConnect(readfile("injectcode.txt")) end
 
-if getgenv().connected = true then
+if getgenv().connected == true then
     G2L["2"]:Destroy()
+    wait(1)
+    G2L["16"]:Destroy()
 else
     
 end
@@ -253,6 +255,12 @@ local function onButtonHeld()
     end
     delfile("injectcode.txt")
 end
+
+G2L["e"].MouseButton1Click:Connect(function()
+    G2L["2"]:Destroy()
+    wait(1)
+    G2L["16"]:Destroy()
+end)
 
 -- Define variables to track the button state
 local isButtonDown = false
