@@ -262,7 +262,7 @@ game:GetService("RunService").Stepped:Connect(function()
             onButtonHeld()
             holdStartTime = 0
             isButtonDown = false
-        elseif elapsedTime <= 1 then
+        else
             button:Destroy()
         end
     end
