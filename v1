@@ -179,10 +179,6 @@ local function output(string)
     out.Text = out.Text .. "\n[Output]:" .. string
 end
 
-local function clear()
-    out.Text=""
-end
-
 getgenv().DevConnect = function(devcode)
     warn("(Panda-Pelican Development | HTTP Protocol [ Beta ])")
     local No_Execute = "No_Data_Set_Here"
@@ -195,7 +191,7 @@ getgenv().DevConnect = function(devcode)
     connected = true
     wait(0.5)
     G2L["2"].Visible = false
-    clear()
+    out.Text=""
     task.spawn(function() 
         while true do
             wait(0.1)
@@ -217,7 +213,9 @@ getgenv().DevConnect = function(devcode)
 end
 
 
-
+G2L["d"].MouseButton1Click:Connect(function()
+    DevConnect(G2L["8"].Text)
+end)
 
 
 
