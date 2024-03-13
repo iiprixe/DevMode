@@ -1,10 +1,9 @@
-getgenv().connected = false
-
--- Instances: 27 | Scripts: 0 | Modules: 0
+--DevMode
+-- Instances: 25 | Scripts: 1 | Modules: 0
 local G2L = {};
 
 -- StarterGui.DevMode
-G2L["1"] = Instance.new("ScreenGui", game.CoreGui);
+G2L["1"] = Instance.new("ScreenGui", game:GetService("Players").LocalPlayer:WaitForChild("PlayerGui"));
 G2L["1"]["IgnoreGuiInset"] = true;
 G2L["1"]["AutoLocalize"] = false;
 G2L["1"]["ScreenInsets"] = Enum.ScreenInsets.DeviceSafeInsets;
@@ -12,354 +11,265 @@ G2L["1"]["Name"] = [[DevMode]];
 G2L["1"]["ZIndexBehavior"] = Enum.ZIndexBehavior.Sibling;
 G2L["1"]["ResetOnSpawn"] = false;
 
--- StarterGui.DevMode.Editor
+-- StarterGui.DevMode.SetKey
 G2L["2"] = Instance.new("Frame", G2L["1"]);
+G2L["2"]["ZIndex"] = 999999999;
 G2L["2"]["BorderSizePixel"] = 0;
-G2L["2"].Visible = false
 G2L["2"]["BackgroundColor3"] = Color3.fromRGB(14, 14, 14);
 G2L["2"]["AnchorPoint"] = Vector2.new(0.5, 0.5);
-G2L["2"]["Size"] = UDim2.new(0, 355, 0, 221);
+G2L["2"]["Size"] = UDim2.new(0, 275, 0, 93);
 G2L["2"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
-G2L["2"]["Position"] = UDim2.new(0.4993804097175598, 0, 0.49897119402885437, 0);
-G2L["2"]["Name"] = [[Editor]];
+G2L["2"]["Position"] = UDim2.new(0.5, 0, 0.5, 0);
+G2L["2"]["Name"] = [[SetKey]];
 
--- StarterGui.DevMode.Editor.Header
+-- StarterGui.DevMode.SetKey.Header
 G2L["3"] = Instance.new("TextLabel", G2L["2"]);
+G2L["3"]["ZIndex"] = 999999999;
 G2L["3"]["BorderSizePixel"] = 0;
-G2L["3"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
+G2L["3"]["BackgroundColor3"] = Color3.fromRGB(21, 21, 21);
 G2L["3"]["TextXAlignment"] = Enum.TextXAlignment.Left;
 G2L["3"]["FontFace"] = Font.new([[rbxasset://fonts/families/GothamSSm.json]], Enum.FontWeight.Medium, Enum.FontStyle.Normal);
-G2L["3"]["TextSize"] = 14;
+G2L["3"]["TextSize"] = 11;
 G2L["3"]["TextColor3"] = Color3.fromRGB(255, 255, 255);
-G2L["3"]["Size"] = UDim2.new(0, 355, 0, 27);
+G2L["3"]["AnchorPoint"] = Vector2.new(0.5, 0);
+G2L["3"]["Size"] = UDim2.new(0, 255, 0, 29);
 G2L["3"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
-G2L["3"]["Text"] = "[Dev][Editor]:";
+G2L["3"]["Text"] = [[Your file\inject wasent found, insert your key:]];
 G2L["3"]["Name"] = [[Header]];
-G2L["3"]["BackgroundTransparency"] = 1;
+G2L["3"]["Position"] = UDim2.new(0.5, 0, 0.05900000035762787, 0);
 
--- StarterGui.DevMode.Editor.Header.UIPadding
-G2L["4"] = Instance.new("UIPadding", G2L["3"]);
-G2L["4"]["PaddingTop"] = UDim.new(0, 5);
-G2L["4"]["PaddingLeft"] = UDim.new(0, 11);
+-- StarterGui.DevMode.SetKey.Header.UICorner
+G2L["4"] = Instance.new("UICorner", G2L["3"]);
+G2L["4"]["CornerRadius"] = UDim.new(0, 5);
 
--- StarterGui.DevMode.Editor.Devkey
-G2L["5"] = Instance.new("Frame", G2L["2"]);
-G2L["5"]["BorderSizePixel"] = 0;
-G2L["5"]["BackgroundColor3"] = Color3.fromRGB(14, 14, 14);
-G2L["5"]["Size"] = UDim2.new(0, 339, 0, 36);
-G2L["5"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
-G2L["5"]["Position"] = UDim2.new(0.022535210475325584, 0, 0.16289593279361725, 0);
-G2L["5"]["Name"] = [[Devkey]];
+-- StarterGui.DevMode.SetKey.Header.UIStroke
+G2L["5"] = Instance.new("UIStroke", G2L["3"]);
+G2L["5"]["Color"] = Color3.fromRGB(101, 101, 101);
+G2L["5"]["ApplyStrokeMode"] = Enum.ApplyStrokeMode.Border;
 
--- StarterGui.DevMode.Editor.Devkey.UICorner
-G2L["6"] = Instance.new("UICorner", G2L["5"]);
-G2L["6"]["CornerRadius"] = UDim.new(0, 5);
+-- StarterGui.DevMode.SetKey.Header.UIPadding
+G2L["6"] = Instance.new("UIPadding", G2L["3"]);
+G2L["6"]["PaddingLeft"] = UDim.new(0, 7);
 
--- StarterGui.DevMode.Editor.Devkey.UIStroke
-G2L["7"] = Instance.new("UIStroke", G2L["5"]);
-G2L["7"]["Color"] = Color3.fromRGB(41, 41, 41);
+-- StarterGui.DevMode.SetKey.Holder
+G2L["7"] = Instance.new("Frame", G2L["2"]);
+G2L["7"]["ZIndex"] = 999999999;
+G2L["7"]["BorderSizePixel"] = 0;
+G2L["7"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
+G2L["7"]["BackgroundTransparency"] = 1;
+G2L["7"]["Size"] = UDim2.new(0, 255, 0, 29);
+G2L["7"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["7"]["Position"] = UDim2.new(0.036363635212183, 0, 0.2524752616882324, 0);
+G2L["7"]["Name"] = [[Holder]];
 
--- StarterGui.DevMode.Editor.Devkey.TextBox
-G2L["8"] = Instance.new("TextBox", G2L["5"]);
+-- StarterGui.DevMode.SetKey.Holder.Save
+G2L["8"] = Instance.new("Frame", G2L["7"]);
+G2L["8"]["ZIndex"] = 999999999;
 G2L["8"]["BorderSizePixel"] = 0;
-G2L["8"]["TextSize"] = 14;
-G2L["8"]["TextXAlignment"] = Enum.TextXAlignment.Left;
-G2L["8"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
-G2L["8"]["TextColor3"] = Color3.fromRGB(255, 255, 255);
-G2L["8"]["FontFace"] = Font.new([[rbxasset://fonts/families/GothamSSm.json]], Enum.FontWeight.Medium, Enum.FontStyle.Normal);
-G2L["8"]["BackgroundTransparency"] = 1;
-G2L["8"]["PlaceholderText"] = "[Dev key]";
-G2L["8"]["Size"] = UDim2.new(1, 0, 1, 0);
-G2L["8"]["ClipsDescendants"] = true;
+G2L["8"]["BackgroundColor3"] = Color3.fromRGB(21, 21, 21);
+G2L["8"]["Size"] = UDim2.new(0, 29, 0, 29);
 G2L["8"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
-local text = ""
-if isfile("injectcode.txt") then
-    text=readfile("injectcode.txt")
-end
-G2L["8"]["Text"] = text;
+G2L["8"]["Position"] = UDim2.new(0.8859999775886536, 0, 0, 0);
+G2L["8"]["Name"] = [[Save]];
 
--- StarterGui.DevMode.Editor.Devkey.TextBox.UIPadding
-G2L["9"] = Instance.new("UIPadding", G2L["8"]);
-G2L["9"]["PaddingLeft"] = UDim.new(0, 10);
+-- StarterGui.DevMode.SetKey.Holder.Save.UICorner
+G2L["9"] = Instance.new("UICorner", G2L["8"]);
+G2L["9"]["CornerRadius"] = UDim.new(0, 5);
 
--- StarterGui.DevMode.Editor.SetDev
-G2L["a"] = Instance.new("Frame", G2L["2"]);
-G2L["a"]["ZIndex"] = 11;
-G2L["a"]["BorderSizePixel"] = 0;
-G2L["a"]["BackgroundColor3"] = Color3.fromRGB(14, 14, 14);
-G2L["a"]["Size"] = UDim2.new(0, 338, 0, 38);
-G2L["a"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
-G2L["a"]["Position"] = UDim2.new(0.023000000044703484, 0, 0.3700000047683716, 0);
-G2L["a"]["Name"] = [[SetDev]];
+-- StarterGui.DevMode.SetKey.Holder.Save.UIStroke
+G2L["a"] = Instance.new("UIStroke", G2L["8"]);
+G2L["a"]["Color"] = Color3.fromRGB(101, 101, 101);
+G2L["a"]["ApplyStrokeMode"] = Enum.ApplyStrokeMode.Border;
 
--- StarterGui.DevMode.Editor.SetDev.UIStroke
-G2L["b"] = Instance.new("UIStroke", G2L["a"]);
-G2L["b"]["Color"] = Color3.fromRGB(41, 41, 41);
+-- StarterGui.DevMode.SetKey.Holder.Save.ImageLabel
+G2L["b"] = Instance.new("ImageLabel", G2L["8"]);
+G2L["b"]["ZIndex"] = 999999999;
+G2L["b"]["BorderSizePixel"] = 0;
+G2L["b"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
+G2L["b"]["AnchorPoint"] = Vector2.new(0.5, 0.5);
+G2L["b"]["Image"] = [[rbxassetid://7072721454]];
+G2L["b"]["Size"] = UDim2.new(0.5, 0, 0.5, 0);
+G2L["b"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["b"]["BackgroundTransparency"] = 1;
+G2L["b"]["Position"] = UDim2.new(0.5, 0, 0.5, 0);
 
--- StarterGui.DevMode.Editor.SetDev.UICorner
-G2L["c"] = Instance.new("UICorner", G2L["a"]);
-G2L["c"]["CornerRadius"] = UDim.new(0, 5);
+-- StarterGui.DevMode.SetKey.Holder.Save.Click
+G2L["c"] = Instance.new("ImageButton", G2L["8"]);
+G2L["c"]["ZIndex"] = 999999999;
+G2L["c"]["BorderSizePixel"] = 0;
+G2L["c"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
+G2L["c"]["Size"] = UDim2.new(1, 0, 1, 0);
+G2L["c"]["Name"] = [[Click]];
+G2L["c"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["c"]["BackgroundTransparency"] = 1;
 
--- StarterGui.DevMode.Editor.SetDev.TextLabel
-G2L["d"] = Instance.new("TextLabel", G2L["a"]);
-G2L["d"]["ZIndex"] = 11;
+-- StarterGui.DevMode.SetKey.Holder.KeyBox
+G2L["d"] = Instance.new("TextBox", G2L["7"]);
+G2L["d"]["PlaceholderColor3"] = Color3.fromRGB(255, 255, 255);
+G2L["d"]["ZIndex"] = 999999999;
 G2L["d"]["BorderSizePixel"] = 0;
-G2L["d"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
-G2L["d"]["FontFace"] = Font.new([[rbxasset://fonts/families/GothamSSm.json]], Enum.FontWeight.Medium, Enum.FontStyle.Normal);
-G2L["d"]["TextSize"] = 14;
+G2L["d"]["TextSize"] = 11;
+G2L["d"]["TextXAlignment"] = Enum.TextXAlignment.Left;
+G2L["d"]["BackgroundColor3"] = Color3.fromRGB(21, 21, 21);
 G2L["d"]["TextColor3"] = Color3.fromRGB(255, 255, 255);
-G2L["d"]["Size"] = UDim2.new(1.0005472898483276, 0, 1, 0);
+G2L["d"]["FontFace"] = Font.new([[rbxasset://fonts/families/GothamSSm.json]], Enum.FontWeight.Medium, Enum.FontStyle.Normal);
+G2L["d"]["PlaceholderText"] = "[Injection Key]";
+G2L["d"]["Size"] = UDim2.new(0, 218, 0, 29);
 G2L["d"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
-G2L["d"]["Text"] = "[Connect]";
-G2L["d"]["BackgroundTransparency"] = 1;
+G2L["d"]["Text"] = [[]];
+G2L["d"]["Name"] = [[KeyBox]];
+G2L["d"]["ClearTextOnFocus"] = false;
 
--- StarterGui.DevMode.Editor.SetDev.ImageButton
-G2L["e"] = Instance.new("ImageButton", G2L["a"]);
-G2L["e"]["ZIndex"] = 11;
-G2L["e"]["BorderSizePixel"] = 0;
-G2L["e"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
-G2L["e"]["Size"] = UDim2.new(1.0005472898483276, 0, 1, 0);
-G2L["e"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
-G2L["e"]["BackgroundTransparency"] = 1;
+-- StarterGui.DevMode.SetKey.Holder.KeyBox.UICorner
+G2L["e"] = Instance.new("UICorner", G2L["d"]);
+G2L["e"]["CornerRadius"] = UDim.new(0, 5);
 
--- StarterGui.DevMode.Editor.Debug
-G2L["f"] = Instance.new("Frame", G2L["2"]);
-G2L["f"]["ZIndex"] = 11;
-G2L["f"]["BorderSizePixel"] = 0;
-G2L["f"]["BackgroundColor3"] = Color3.fromRGB(14, 14, 14);
-G2L["f"]["Size"] = UDim2.new(0, 338, 0, 80);
-G2L["f"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
-G2L["f"]["Position"] = UDim2.new(0.022535210475325584, 0, 0.5874796509742737, 0);
-G2L["f"]["Name"] = [[Debug]];
+-- StarterGui.DevMode.SetKey.Holder.KeyBox.UIStroke
+G2L["f"] = Instance.new("UIStroke", G2L["d"]);
+G2L["f"]["Color"] = Color3.fromRGB(101, 101, 101);
+G2L["f"]["ApplyStrokeMode"] = Enum.ApplyStrokeMode.Border;
 
--- StarterGui.DevMode.Editor.Debug.UIStroke
-G2L["10"] = Instance.new("UIStroke", G2L["f"]);
-G2L["10"]["Color"] = Color3.fromRGB(41, 41, 41);
+-- StarterGui.DevMode.SetKey.Holder.KeyBox.UIPadding
+G2L["10"] = Instance.new("UIPadding", G2L["d"]);
+G2L["10"]["PaddingLeft"] = UDim.new(0, 7);
 
--- StarterGui.DevMode.Editor.Debug.UICorner
-G2L["11"] = Instance.new("UICorner", G2L["f"]);
-G2L["11"]["CornerRadius"] = UDim.new(0, 5);
+-- StarterGui.DevMode.SetKey.UIListLayout
+G2L["11"] = Instance.new("UIListLayout", G2L["2"]);
+G2L["11"]["VerticalAlignment"] = Enum.VerticalAlignment.Center;
+G2L["11"]["HorizontalAlignment"] = Enum.HorizontalAlignment.Center;
+G2L["11"]["Padding"] = UDim.new(0, 10);
+G2L["11"]["SortOrder"] = Enum.SortOrder.LayoutOrder;
 
--- StarterGui.DevMode.Editor.Debug.Debug
-G2L["12"] = Instance.new("TextLabel", G2L["f"]);
-G2L["12"]["TextWrapped"] = true;
-G2L["12"]["ZIndex"] = 11;
-G2L["12"]["BorderSizePixel"] = 0;
-G2L["12"]["TextYAlignment"] = Enum.TextYAlignment.Top;
-G2L["12"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
-G2L["12"]["TextXAlignment"] = Enum.TextXAlignment.Left;
-G2L["12"]["FontFace"] = Font.new([[rbxasset://fonts/families/GothamSSm.json]], Enum.FontWeight.Medium, Enum.FontStyle.Normal);
-G2L["12"]["TextSize"] = 11;
-G2L["12"]["TextColor3"] = Color3.fromRGB(255, 255, 255);
-G2L["12"]["Size"] = UDim2.new(1.0005472898483276, 0, 1, 0);
-G2L["12"]["ClipsDescendants"] = true;
-G2L["12"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
-G2L["12"]["Text"] = "[Output]:Loaded";
-G2L["12"]["Name"] = [[Debug]];
-G2L["12"]["BackgroundTransparency"] = 1;
+-- StarterGui.DevMode.SetKey.Handler
+G2L["12"] = Instance.new("LocalScript", G2L["2"]);
+G2L["12"]["Name"] = [[Handler]];
 
--- StarterGui.DevMode.Editor.Debug.Debug.UIPadding
-G2L["13"] = Instance.new("UIPadding", G2L["12"]);
-G2L["13"]["PaddingTop"] = UDim.new(0, 9);
-G2L["13"]["PaddingLeft"] = UDim.new(0, 9);
+-- StarterGui.DevMode.DropShadow
+G2L["13"] = Instance.new("Frame", G2L["1"]);
+G2L["13"]["BorderSizePixel"] = 0;
+G2L["13"]["BackgroundColor3"] = Color3.fromRGB(14, 14, 14);
+G2L["13"]["AnchorPoint"] = Vector2.new(0.5, 0.5);
+G2L["13"]["BackgroundTransparency"] = 1;
+G2L["13"]["Size"] = UDim2.new(0, 275, 0, 93);
+G2L["13"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["13"]["Position"] = UDim2.new(0.5, 0, 0.5, 0);
+G2L["13"]["Name"] = [[DropShadow]];
 
--- StarterGui.DevMode.Editor.UIStroke
-G2L["14"] = Instance.new("UIStroke", G2L["2"]);
-G2L["14"]["Color"] = Color3.fromRGB(41, 41, 41);
+-- StarterGui.DevMode.DropShadow.DropShadow
+G2L["14"] = Instance.new("ImageLabel", G2L["13"]);
+G2L["14"]["BorderSizePixel"] = 0;
+G2L["14"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
+G2L["14"]["AnchorPoint"] = Vector2.new(0.5, 0.5);
+G2L["14"]["Image"] = [[rbxassetid://297694300]];
+G2L["14"]["Size"] = UDim2.new(1.1774444580078125, 0, 1.2319293022155762, 0);
+G2L["14"]["Name"] = [[DropShadow]];
+G2L["14"]["BackgroundTransparency"] = 1;
+G2L["14"]["Position"] = UDim2.new(0.5067567229270935, 0, 0.5012590885162354, 0);
 
--- StarterGui.DevMode.Editor.UICorner
-G2L["15"] = Instance.new("UICorner", G2L["2"]);
-G2L["15"]["CornerRadius"] = UDim.new(0, 13);
+-- StarterGui.DevMode.DropShadow.DropShadow
+G2L["15"] = Instance.new("ImageLabel", G2L["13"]);
+G2L["15"]["BorderSizePixel"] = 0;
+G2L["15"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
+G2L["15"]["AnchorPoint"] = Vector2.new(0.5, 0.5);
+G2L["15"]["Image"] = [[rbxassetid://297694300]];
+G2L["15"]["Size"] = UDim2.new(1.1774444580078125, 0, 1.2319293022155762, 0);
+G2L["15"]["Name"] = [[DropShadow]];
+G2L["15"]["BackgroundTransparency"] = 1;
+G2L["15"]["Position"] = UDim2.new(0.5067567229270935, 0, 0.5012590885162354, 0);
 
-local out = G2L["12"]
-
-local function output(string)
-    out.Text = out.Text .. "\n[Output]:" .. string
-end
-
-getgenv().DevConnect = function(devcode)
-    warn("(Panda-Pelican Development | HTTP Protocol [ Beta ])")
-    local No_Execute = "No_Data_Set_Here"
-    local IPv4 = base64.decode(devcode)
-    if IPv4 == "" or IPv4 == nil then
-        output("Auto Connect Failed [?]")
-        return
-    end
-    output("Connected")
-    getgenv().connected = true
-    wait(0.5)
-    G2L["2"]:Destroy()
-    out.Text=""
-    task.spawn(function() 
-        while true do
-            wait(0.1)
-            local content = game:HttpGet("http://"..IPv4..":2023".."/readcontent")     
-            if content ~= No_Execute then
-                local success, result = pcall(function()
-                    runcode(content)
-                    local a = tostring(game:HttpGet("http://"..IPv4..":2023".."/clear"))
-                end)
-
-                if not success then
-                    -- Handle the exception here
-                    warn("Error executing loaded code:", result)
-                    local b = tostring(game:HttpGet("http://"..IPv4..":2023".."/clear"))
-                end        
-            end
-        end
-    end) 
-end
-
---auto:
-if isfile("injectcode.txt") then DevConnect(readfile("injectcode.txt")) else writefile("injectcode.txt", G2L["8"].Text) DevConnect(readfile("injectcode.txt")) end
-    
-
-G2L["e"].MouseButton1Click:Connect(function()
-    if isfile("injectcode.txt") then DevConnect(readfile("injectcode.txt")) else writefile("injectcode.txt", G2L["8"].Text) DevConnect(readfile("injectcode.txt")) end
-end)
-
-
-
---// TOP BAR BUTTON \\
-
-G2L["16"] = Instance.new("Frame", game.CoreGui:WaitForChild("TopBarApp").UnibarLeftFrame.StackedElements);
+-- StarterGui.DevMode.DropShadow.DropShadow
+G2L["16"] = Instance.new("ImageLabel", G2L["13"]);
+G2L["16"]["BorderSizePixel"] = 0;
+G2L["16"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
+G2L["16"]["AnchorPoint"] = Vector2.new(0.5, 0.5);
+G2L["16"]["Image"] = [[rbxassetid://297694300]];
+G2L["16"]["Size"] = UDim2.new(1.1774444580078125, 0, 1.2319293022155762, 0);
+G2L["16"]["Name"] = [[DropShadow]];
 G2L["16"]["BackgroundTransparency"] = 1;
-G2L["16"]["LayoutOrder"] = 1;
-G2L["16"]["Size"] = UDim2.new(0, 44, 1, 0);
-G2L["16"]["Name"] = [[TriggerPoint]];
+G2L["16"]["Position"] = UDim2.new(0.5067567229270935, 0, 0.5012590885162354, 0);
 
--- StarterGui.DevMode.TriggerPoint.Background
-G2L["17"] = Instance.new("ImageButton", G2L["16"]);
-G2L["17"]["BackgroundColor3"] = Color3.fromRGB(0, 0, 0);
-G2L["17"]["AnchorPoint"] = Vector2.new(0, 0.5);
-G2L["17"]["Size"] = UDim2.new(0, 44, 0, 44);
-G2L["17"]["Name"] = [[Background]];
-G2L["17"]["Position"] = UDim2.new(0, 0, 0.5, 0);
-G2L["17"]["BackgroundTransparency"] = 0.30000001192092896;
+-- StarterGui.DevMode.DropShadow.DropShadow
+G2L["17"] = Instance.new("ImageLabel", G2L["13"]);
+G2L["17"]["BorderSizePixel"] = 0;
+G2L["17"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
+G2L["17"]["AnchorPoint"] = Vector2.new(0.5, 0.5);
+G2L["17"]["Image"] = [[rbxassetid://297694300]];
+G2L["17"]["Size"] = UDim2.new(1.1774444580078125, 0, 1.2319293022155762, 0);
+G2L["17"]["Name"] = [[DropShadow]];
+G2L["17"]["BackgroundTransparency"] = 1;
+G2L["17"]["Position"] = UDim2.new(0.5067567229270935, 0, 0.5012590885162354, 0);
 
-local button = G2L["17"]
-local guiToToggle = G2L["2"]
-local holdThreshold = 1 -- Adjust this value as needed
-
-local function onButtonHeld()
-    getgenv().connected = false
-    if G2L["2"] then
-        guiToToggle.Visible = not guiToToggle.Visible
-    end
-    delfile("injectcode.txt")
-end
-
-G2L["e"].MouseButton1Click:Connect(function()
-    wait(2)
-    G2L["2"]:Destroy()
-    G2L["16"]:Destroy()
-end)
-
--- Define variables to track the button state
-local isButtonDown = false
-local holdStartTime = 0
-
--- Function to handle when the button is pressed
-local function onButtonPressed()
-    isButtonDown = true
-    holdStartTime = tick()  -- Get the current time
-end
-
--- Function to handle when the button is released
-local function onButtonReleased()
-    isButtonDown = false
-    holdStartTime = 0
-end
-
-local clickCount = 0
-local lastClickTime = 0
-
-local function onTripleClick()
-    button:Destroy()
-end
-
-local function onButtonClicked()
-    local currentTime = tick()
-    if currentTime - lastClickTime < 0.5 then
-        clickCount = clickCount + 1
-    else
-        clickCount = 1
-    end
-    
-    lastClickTime = currentTime
-    
-    if clickCount == 3 then
-        onTripleClick()
-        clickCount = 0
-    end
-end
-
-button.MouseButton1Click:Connect(onButtonClicked)
-button.MouseButton1Down:Connect(onButtonPressed)
-button.MouseButton1Up:Connect(onButtonReleased)
-
-game:GetService("RunService").Stepped:Connect(function()
-    if isButtonDown then
-        local elapsedTime = tick() - holdStartTime
-        if elapsedTime >= 1 then
-            onButtonHeld()
-            holdStartTime = 0
-            isButtonDown = false
-        end
-    end
-end)
-
-
-
--- StarterGui.DevMode.TriggerPoint.Background.ScalingIcon
-G2L["18"] = Instance.new("ImageLabel", G2L["17"]);
-G2L["18"]["ScaleType"] = Enum.ScaleType.Fit;
-G2L["18"]["ImageColor3"] = Color3.fromRGB(255,0,0)
+-- StarterGui.DevMode.DropShadow.DropShadow
+G2L["18"] = Instance.new("ImageLabel", G2L["13"]);
+G2L["18"]["BorderSizePixel"] = 0;
+G2L["18"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
 G2L["18"]["AnchorPoint"] = Vector2.new(0.5, 0.5);
-G2L["18"]["Image"] = [[http://www.roblox.com/asset/?id=15861930865]];
-G2L["18"]["Size"] = UDim2.new(0, 30, 0, 30);
-G2L["18"]["Name"] = [[ScalingIcon]];
+G2L["18"]["Image"] = [[rbxassetid://297694300]];
+G2L["18"]["Size"] = UDim2.new(1.1774444580078125, 0, 1.2319293022155762, 0);
+G2L["18"]["Name"] = [[DropShadow]];
 G2L["18"]["BackgroundTransparency"] = 1;
-G2L["18"]["Position"] = UDim2.new(0.5, 0, 0.5, 0);
+G2L["18"]["Position"] = UDim2.new(0.5067567229270935, 0, 0.5012590885162354, 0);
 
--- StarterGui.DevMode.TriggerPoint.Background.UICorner
-G2L["19"] = Instance.new("UICorner", G2L["17"]);
-G2L["19"]["CornerRadius"] = UDim.new(1, 0);
+-- StarterGui.DevMode.DropShadow.DropShadow
+G2L["19"] = Instance.new("ImageLabel", G2L["13"]);
+G2L["19"]["BorderSizePixel"] = 0;
+G2L["19"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
+G2L["19"]["AnchorPoint"] = Vector2.new(0.5, 0.5);
+G2L["19"]["Image"] = [[rbxassetid://297694300]];
+G2L["19"]["Size"] = UDim2.new(1.1774444580078125, 0, 1.2319293022155762, 0);
+G2L["19"]["Name"] = [[DropShadow]];
+G2L["19"]["BackgroundTransparency"] = 1;
+G2L["19"]["Position"] = UDim2.new(0.5067567229270935, 0, 0.5012590885162354, 0);
 
--- StarterGui.DevMode.TriggerPoint.Background.StateOverlayRound
-G2L["1a"] = Instance.new("Frame", G2L["17"]);
-G2L["1a"]["ZIndex"] = 2;
-G2L["1a"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
-G2L["1a"]["BackgroundTransparency"] = 1;
-G2L["1a"]["Size"] = UDim2.new(1, 0, 1, 0);
-G2L["1a"]["Name"] = [[StateOverlayRound]];
+-- StarterGui.DevMode.SetKey.Handler
+local function C_12()
+local script = G2L["12"];
 
--- StarterGui.DevMode.TriggerPoint.Background.StateOverlayRound.UICorner
-G2L["1b"] = Instance.new("UICorner", G2L["1a"]);
-G2L["1b"]["CornerRadius"] = UDim.new(1, 0);
+    getgenv().DevConnect = function(devcode)
+        warn("(Panda-Pelican Development | HTTP Protocol [ Beta ])")
+        local No_Execute = "No_Data_Set_Here"
+        local IPv4 = base64.decode(devcode)
+        if IPv4 == "" or IPv4 == nil then
+            output("Auto Connect Failed [?]")
+            return
+        end
+        task.spawn(function() 
+            while true do
+                wait(0.1)
+                local content = game:HttpGet("http://"..IPv4..":2023".."/readcontent")     
+                if content ~= No_Execute then
+                    local success, result = pcall(function()
+                        runcode(content)
+                        local a = tostring(game:HttpGet("http://"..IPv4..":2023".."/clear"))
+                    end)
 
-
-
-
-
-wait(4)
-local i = G2L["18"]
-if getgenv().connected == true then
-    wait(2)
-    i.ImageColor3 = Color3.fromRGB(0,255,0)
-    G2L["2"]:Destroy()
-    G2L["16"]:Destroy()
-else i.ImageColor3 = Color3.fromRGB(255,0,0)
-end
-
-while true do
-    wait()
-    local i = G2L["18"]
-    if getgenv().connected then
-        i.ImageColor3 = Color3.fromRGB(0,255,0)
-    else
-        i.ImageColor3 = Color3.fromRGB(255,0,0)
+                    if not success then
+                        -- Handle the exception here
+                        warn("Error executing loaded code:", result)
+                        local b = tostring(game:HttpGet("http://"..IPv4..":2023".."/clear"))
+                    end        
+                end
+            end
+        end) 
     end
-end
+
+    if isfile("injectcode.txt") then
+        script.Parent.Parent:Destroy()
+    end
+	
+	local box = script.Parent.Holder.KeyBox
+	local save = script.Parent.Holder.Save
+	
+	save.Click.MouseButton1Click:Connect(function()
+        if isfile("injectcode.txt") then
+        else
+            writefile("injectcode.txt", box.Text)
+            DevConnect(readfile("injectcode.txt"))
+            wait(0.4)
+            script.Parent.Parent:Destroy()
+        end
+	end)
+end;
+task.spawn(C_12);
 
 return G2L["1"], require;
