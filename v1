@@ -241,6 +241,7 @@ local function onButtonHeld()
     getgenv().connected = false
     G2L["2"].Visible = not G2L["2"].Visible
     delfile("injectcode.txt")
+    wait(0.7)
 end
 local isButtonDown = false
 local holdStartTime = 0
@@ -261,6 +262,8 @@ game:GetService("RunService").Stepped:Connect(function()
             onButtonHeld()
             holdStartTime = 0
             isButtonDown = false
+        else elapsedTime <= 1 then
+            button:Destroy()
         end
     end
 end)
@@ -299,6 +302,9 @@ G2L["1b"]["CornerRadius"] = UDim.new(1, 0);
 
 while true do
     wait()
+    if game.CoreGui.TopBarApp.UnibarLeftFrame.UnibarMenu.Size.X.Offset == 88 then
+        G2L["16"].Visible = true else G2L["16"].Visible = false
+    end
     local i = G2L["18"]
     local b = G2L["16"]
     if getgenv().connected then
