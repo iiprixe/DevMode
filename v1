@@ -259,7 +259,7 @@ local clickCount = 0
 local lastClickTime = 0
 
 local function onTripleClick()
-    button.Visible = false
+    button:Destroy()
 end
 
 local function onButtonClicked()
