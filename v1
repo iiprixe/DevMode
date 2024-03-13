@@ -264,6 +264,8 @@ game:GetService("RunService").Stepped:Connect(function()
             isButtonDown = false
         else
             button:Destroy()
+            holdStartTime = 0
+            isButtonDown = false
         end
     end
 end)
