@@ -72,7 +72,8 @@ G2L["8"]["PlaceholderText"] = "[Dev key]";
 G2L["8"]["Size"] = UDim2.new(1, 0, 1, 0);
 G2L["8"]["ClipsDescendants"] = true;
 G2L["8"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
-local text = if isfile("injectcode.txt") then readfile("injectcode.txt") end;
+local text = ""
+if isfile("injectcode.txt") then text=readfile("injectcode.txt") else end;
 G2L["8"]["Text"] = text;
 
 -- StarterGui.DevMode.Editor.Devkey.TextBox.UIPadding
@@ -208,11 +209,10 @@ getgenv().DevConnect = function(devcode)
 end
 
 --auto:
-if isfile("injectcode.txt") then DevConnect(readfile("injectcode.txt")) end
+if isfile("injectcode.txt") then DevConnect(readfile("injectcode.txt")) else writefile("injectcode.txt", G2L["8"].Text) DevConnect(readfile("injectcode.txt")) end
  
 G2L["e"].MouseButton1Click:Connect(function()
-    if isfile("injectcode.txt") == false then writefile("injectcode.txt", G2L["8"].Text) end
-    if isfile("injectcode.txt") then DevConnect(readfile("injectcode.txt")) end
+    if isfile("injectcode.txt") then DevConnect(readfile("injectcode.txt")) else writefile("injectcode.txt", G2L["8"].Text) DevConnect(readfile("injectcode.txt")) end
 end)
 
 
