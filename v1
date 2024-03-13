@@ -215,6 +215,7 @@ end
 local auto = readfile("injectcode.txt")
 if auto then
     DevConnect(auto)
+    return
 end
 
 G2L["e"].MouseButton1Click:Connect(function()
