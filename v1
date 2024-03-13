@@ -72,7 +72,17 @@ G2L["8"]["PlaceholderText"] = "[Dev key]";
 G2L["8"]["Size"] = UDim2.new(1, 0, 1, 0);
 G2L["8"]["ClipsDescendants"] = true;
 G2L["8"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
-G2L["8"]["Text"] = readfile("injectcode.txt");
+local auto = readfile("injectcode.txt")
+local success, result = pcall(function()
+    if auto then
+    end
+end)
+
+if not success then
+    print("false")
+else
+    G2L["8"]["Text"] = readfile("injectcode.txt");
+end
 
 -- StarterGui.DevMode.Editor.Devkey.TextBox.UIPadding
 G2L["9"] = Instance.new("UIPadding", G2L["8"]);
