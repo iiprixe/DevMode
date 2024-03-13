@@ -72,9 +72,8 @@ G2L["8"]["PlaceholderText"] = "[Dev key]";
 G2L["8"]["Size"] = UDim2.new(1, 0, 1, 0);
 G2L["8"]["ClipsDescendants"] = true;
 G2L["8"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
-local auto = readfile("injectcode.txt")
 local success, result = pcall(function()
-    if auto then
+    if readfile("injectcode.txt") then
     end
 end)
 
@@ -222,9 +221,8 @@ getgenv().DevConnect = function(devcode)
     end) 
 end
 
-local auto = readfile("injectcode.txt")
 local success, result = pcall(function()
-    if auto then
+    if readfile("injectcode.txt") then
     end
 end)
 
