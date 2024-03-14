@@ -1,4 +1,4 @@
-
+wait(2) -- prevent crash when you join a game (auto exe)
 -- Instances: 27 | Scripts: 4 | Modules: 0
 local G2L = {};
 
