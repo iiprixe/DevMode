@@ -333,54 +333,66 @@ local function C_1b()
 local script = G2L["1b"];
     if isfile("injectcode.txt") then
 else
-    game:GetService("TweenService"):Create(script.Parent, TweenInfo.new(0), {ImageTransparency = 1}):Play()
-	for i,v in pairs(script.Parent.Parent.DevModeFrame:GetDescendants()) do
-		game:GetService("TweenService"):Create(script.Parent.Parent.DevModeFrame, TweenInfo.new(0), {BackgroundTransparency = 1}):Play()
-		if v:IsA("Frame") then
-			game:GetService("TweenService"):Create(v, TweenInfo.new(0), {BackgroundTransparency = 1}):Play()
-		elseif v:IsA("TextButton") or v:IsA("TextBox") then
-			game:GetService("TweenService"):Create(v, TweenInfo.new(0), {BackgroundTransparency = 1}):Play()
-			game:GetService("TweenService"):Create(v, TweenInfo.new(0), {TextTransparency = 1}):Play()
-		elseif v:IsA("TextLabel") then
-			game:GetService("TweenService"):Create(v, TweenInfo.new(0), {TextTransparency = 1}):Play()
-		elseif v:IsA("ImageLabel") then
-			if v.Name == "HappyGuy" then game:GetService("TweenService"):Create(v, TweenInfo.new(0), {BackgroundTransparency = 1}):Play() end
-			game:GetService("TweenService"):Create(v, TweenInfo.new(0), {ImageTransparency = 1}):Play()
-		end
+game:GetService("TweenService"):Create(script.Parent, TweenInfo.new(0), {ImageTransparency = 1}):Play()
+for i,v in pairs(script.Parent.Parent.DevModeFrame:GetDescendants()) do
+	game:GetService("TweenService"):Create(script.Parent.Parent.DevModeFrame, TweenInfo.new(0), {BackgroundTransparency = 1}):Play()
+	if v:IsA("Frame") then
+		game:GetService("TweenService"):Create(v, TweenInfo.new(0), {BackgroundTransparency = 1}):Play()
+	elseif v:IsA("TextButton") or v:IsA("TextBox") then
+		game:GetService("TweenService"):Create(v, TweenInfo.new(0), {BackgroundTransparency = 1}):Play()
+		game:GetService("TweenService"):Create(v, TweenInfo.new(0), {TextTransparency = 1}):Play()
+	elseif v:IsA("TextLabel") then
+		game:GetService("TweenService"):Create(v, TweenInfo.new(0), {TextTransparency = 1}):Play()
+	elseif v:IsA("ImageLabel") then
+		if v.Name == "HappyGuy" then game:GetService("TweenService"):Create(v, TweenInfo.new(0), {BackgroundTransparency = 1}):Play() end
+		game:GetService("TweenService"):Create(v, TweenInfo.new(0), {ImageTransparency = 1}):Play()
 	end
-	for i,v in pairs(script.Parent.Parent.Shadow:GetDescendants()) do
-		game:GetService("TweenService"):Create(script.Parent.Parent.Shadow, TweenInfo.new(0), {BackgroundTransparency = 1}):Play()
-		if v:IsA("ImageLabel") then
-			game:GetService("TweenService"):Create(v, TweenInfo.new(0), {ImageTransparency = 1}):Play()
-		end
+end
+for i,v in pairs(script.Parent.Parent.Shadow:GetDescendants()) do
+	game:GetService("TweenService"):Create(script.Parent.Parent.Shadow, TweenInfo.new(0), {BackgroundTransparency = 1}):Play()
+	if v:IsA("ImageLabel") then
+		game:GetService("TweenService"):Create(v, TweenInfo.new(0), {ImageTransparency = 1}):Play()
 	end
-	wait(2)
-	game:GetService("TweenService"):Create(script.Parent, TweenInfo.new(1), {ImageTransparency = 0}):Play()
-	script.Parent:TweenPosition(UDim2.new(0.125,0,0.5,0), "Out", "Quad", 1, true)
-	wait(1)
-	script.Parent:TweenPosition(UDim2.new(0.875,0,0.5,0), "Out", "Quad", 0.4, true)
-	wait(0.4)
-	game:GetService("TweenService"):Create(script.Parent, TweenInfo.new(1), {ImageTransparency = 1}):Play()
-	for i,v in pairs(script.Parent.Parent.DevModeFrame:GetDescendants()) do
-		game:GetService("TweenService"):Create(script.Parent.Parent.DevModeFrame, TweenInfo.new(0), {BackgroundTransparency = 0}):Play()
-		if v:IsA("Frame") then
-			game:GetService("TweenService"):Create(v, TweenInfo.new(1), {BackgroundTransparency = 0}):Play()
-		elseif v:IsA("TextButton") or v:IsA("TextBox") then
-			game:GetService("TweenService"):Create(v, TweenInfo.new(1), {BackgroundTransparency = 0}):Play()
-			game:GetService("TweenService"):Create(v, TweenInfo.new(1), {TextTransparency = 0}):Play()
-		elseif v:IsA("TextLabel") then
-			game:GetService("TweenService"):Create(v, TweenInfo.new(1), {TextTransparency = 0}):Play()
-		elseif v:IsA("ImageLabel") then
-			if v.Name == "HappyGuy" then game:GetService("TweenService"):Create(v, TweenInfo.new(0), {BackgroundTransparency = 0}):Play() end
-			game:GetService("TweenService"):Create(v, TweenInfo.new(1), {ImageTransparency = 0}):Play()
-		end
+end
+game:GetService("TweenService"):Create(script.Parent, TweenInfo.new(0), {ImageTransparency = 1}):Play()
+script.Parent:TweenPosition(UDim2.new(0.5,0,0.7,0), "Out", "Quad", 0, true)
+wait(3)
+game:GetService("TweenService"):Create(script.Parent, TweenInfo.new(1), {ImageTransparency = 0}):Play()
+script.Parent:TweenPosition(UDim2.new(0.5,0,0.5,0), "Out", "Quad", 1, true)
+wait(0.7)
+blinks = 0
+repeat
+	game:GetService("TweenService"):Create(script.Parent, TweenInfo.new(0.1), {ImageColor3 = Color3.fromRGB(255, 0, 0)}):Play()
+	wait(0.1)
+	game:GetService("TweenService"):Create(script.Parent, TweenInfo.new(0.1), {ImageColor3 = Color3.fromRGB(255, 255, 255)}):Play()
+	blinks+=1
+	wait(0.1)
+until blinks == 4
+wait(0.4)
+game:GetService("TweenService"):Create(script.Parent, TweenInfo.new(1), {ImageTransparency = 1}):Play()
+script.Parent:TweenPosition(UDim2.new(0.5,0,0.7,0), "Out", "Quad", 1, true)
+wait(1.5)
+game:GetService("TweenService"):Create(script.Parent, TweenInfo.new(1), {ImageTransparency = 1}):Play()
+for i,v in pairs(script.Parent.Parent.DevModeFrame:GetDescendants()) do
+	game:GetService("TweenService"):Create(script.Parent.Parent.DevModeFrame, TweenInfo.new(0), {BackgroundTransparency = 0}):Play()
+	if v:IsA("Frame") then
+		game:GetService("TweenService"):Create(v, TweenInfo.new(1), {BackgroundTransparency = 0}):Play()
+	elseif v:IsA("TextButton") or v:IsA("TextBox") then
+		game:GetService("TweenService"):Create(v, TweenInfo.new(1), {BackgroundTransparency = 0}):Play()
+		game:GetService("TweenService"):Create(v, TweenInfo.new(1), {TextTransparency = 0}):Play()
+	elseif v:IsA("TextLabel") then
+		game:GetService("TweenService"):Create(v, TweenInfo.new(1), {TextTransparency = 0}):Play()
+	elseif v:IsA("ImageLabel") then
+		if v.Name == "HappyGuy" then game:GetService("TweenService"):Create(v, TweenInfo.new(0), {BackgroundTransparency = 0}):Play() end
+		game:GetService("TweenService"):Create(v, TweenInfo.new(1), {ImageTransparency = 0}):Play()
 	end
-	for i,v in pairs(script.Parent.Parent.Shadow:GetDescendants()) do
-		game:GetService("TweenService"):Create(script.Parent.Parent.Shadow, TweenInfo.new(0), {BackgroundTransparency = 0}):Play()
-		if v:IsA("ImageLabel") then
-			game:GetService("TweenService"):Create(v, TweenInfo.new(1), {ImageTransparency = 0}):Play()
-		end
+end
+for i,v in pairs(script.Parent.Parent.Shadow:GetDescendants()) do
+	game:GetService("TweenService"):Create(script.Parent.Parent.Shadow, TweenInfo.new(0), {BackgroundTransparency = 0}):Play()
+	if v:IsA("ImageLabel") then
+		game:GetService("TweenService"):Create(v, TweenInfo.new(1), {ImageTransparency = 0}):Play()
 	end
+end
     end
 end;
 task.spawn(C_1b);
